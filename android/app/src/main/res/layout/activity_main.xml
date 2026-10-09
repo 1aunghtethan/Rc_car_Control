@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ===== header ===== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RC Car"
+            android:textColor="@color/txt"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/statusTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Disconnected"
+            android:textColor="@color/muted"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/connectBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="@color/accent"
+                android:text="Connect to car"
+                android:textColor="#06131C"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/chooseBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:backgroundTint="@color/panel"
+                android:text="Devices"
+                android:textColor="@color/txt" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/hintTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Uses the phone's saved (paired) devices - no scanning needed."
+            android:textColor="@color/muted"
+            android:textSize="11sp" />
+
+        <!-- ===== telemetry ===== -->
+        <TextView
+            android:id="@+id/distTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@color/panel"
+            android:padding="14dp"
+            android:text="Distance: -- cm"
+            android:textColor="@color/txt"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- ===== D-pad ===== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="DRIVE"
+            android:textColor="@color/muted"
+            android:textSize="11sp"
+            android:letterSpacing="0.1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Space android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btnF"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/panel"
+                android:text="▲"
+                android:textColor="@color/txt"
+                android:textSize="26sp" />
+
+            <Space android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnL"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="@color/panel"
+                android:text="◀"
+                android:textColor="@color/txt"
+                android:textSize="26sp" />
+
+            <Button
+                android:id="@+id/btnS"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="#3A1622"
+                android:text="■"
+                android:textColor="#FF8AA2"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btnR"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:backgroundTint="@color/panel"
+                android:text="▶"
+                android:textColor="@color/txt"
+                android:textSize="26sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Space android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btnB"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/panel"
+                android:text="▼"
+                android:textColor="@color/txt"
+                android:textSize="26sp" />
+
+            <Space android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+        </LinearLayout>
+
+        <!-- ===== speed ===== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="SPEED"
+            android:textColor="@color/muted"
+            android:textSize="11sp"
+            android:letterSpacing="0.1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/speedTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Gear 2  (200)"
+                android:textColor="@color/txt"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/speedMinusBtn"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="@color/panel"
+                android:text="−"
+                android:textColor="@color/txt"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/speedPlusBtn"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/panel"
+                android:text="+"
+                android:textColor="@color/txt"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Gear 1-4 buttons. Range 170..255 so even gear 1 moves the car.
+             Sent as explicit V:<pwm>, not a bare digit (firmware digit = n*28). -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/g1" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:layout_marginEnd="3dp" android:padding="0dp" android:backgroundTint="@color/panel" android:text="1\n170" android:textColor="@color/txt" android:textSize="12sp" />
+            <Button android:id="@+id/g2" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:layout_marginStart="3dp" android:layout_marginEnd="3dp" android:padding="0dp" android:backgroundTint="@color/accent" android:text="2\n200" android:textColor="#06131C" android:textSize="12sp" android:textStyle="bold" />
+            <Button android:id="@+id/g3" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:layout_marginStart="3dp" android:layout_marginEnd="3dp" android:padding="0dp" android:backgroundTint="@color/panel" android:text="3\n225" android:textColor="@color/txt" android:textSize="12sp" />
+            <Button android:id="@+id/g4" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:layout_marginStart="3dp" android:padding="0dp" android:backgroundTint="@color/panel" android:text="4\n255" android:textColor="@color/txt" android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- ===== servo ===== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="SERVO"
+            android:textColor="@color/muted"
+            android:textSize="11sp"
+            android:letterSpacing="0.1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <SeekBar
+                android:id="@+id/servoSeek"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="180"
+                android:progress="90" />
+
+            <TextView
+                android:id="@+id/servoTxt"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="90°"
+                android:textColor="@color/txt"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/servoLeftBtn"   android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="3dp" android:backgroundTint="@color/panel" android:textColor="@color/txt" android:textSize="12sp" android:text="0°" />
+            <Button android:id="@+id/servoCenterBtn" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="3dp" android:layout_marginEnd="3dp" android:backgroundTint="@color/panel" android:textColor="@color/txt" android:textSize="12sp" android:text="90°" />
+            <Button android:id="@+id/servoRightBtn"  android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="3dp" android:layout_marginEnd="3dp" android:backgroundTint="@color/panel" android:textColor="@color/txt" android:textSize="12sp" android:text="180°" />
+            <Button android:id="@+id/servoSweepBtn"  android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="3dp" android:backgroundTint="@color/panel" android:textColor="@color/txt" android:textSize="12sp" android:text="Sweep" />
+        </LinearLayout>
+
+        <!-- ===== hardware self-test ===== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="TEST"
+            android:textColor="@color/muted"
+            android:textSize="11sp"
+            android:letterSpacing="0.1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/distTestBtn"  android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="4dp" android:backgroundTint="@color/panel" android:textColor="@color/txt" android:textSize="12sp" android:text="📏 Distance" />
+            <Button android:id="@+id/servoTestBtn" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="4dp" android:backgroundTint="@color/panel" android:textColor="@color/txt" android:textSize="12sp" android:text="🔄 Servo test" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/testOutTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@color/panel"
+            android:padding="10dp"
+            android:text="Tap a button to test a sensor."
+            android:textColor="@color/muted"
+            android:textSize="12sp" />
+
+        <!-- ===== functions ===== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="FUNCTIONS"
+            android:textColor="@color/muted"
+            android:textSize="11sp"
+            android:letterSpacing="0.1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/recBtn"  android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="4dp" android:backgroundTint="@color/panel" android:textColor="@color/txt" android:textSize="12sp" android:text="● Rec" />
+            <Button android:id="@+id/playBtn" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="4dp" android:layout_marginEnd="4dp" android:backgroundTint="@color/panel" android:textColor="@color/txt" android:textSize="12sp" android:text="▶ Play" />
+            <Button android:id="@+id/obsBtn"  android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="4dp" android:layout_marginEnd="4dp" android:backgroundTint="@color/panel" android:textColor="@color/txt" android:textSize="12sp" android:text="🛡 Avoid" />
+            <Button android:id="@+id/hornBtn" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="4dp" android:backgroundTint="@color/panel" android:textColor="@color/txt" android:textSize="12sp" android:text="📢 Horn" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/estopBtn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="@color/danger"
+            android:text="EMERGENCY STOP"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>

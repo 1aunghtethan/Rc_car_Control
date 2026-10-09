@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<meta name="theme-color" content="#0b0f14" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>RC Car Controller</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<style>
+  :root{
+    --bg:#0b0f14;
+    --bg2:#111823;
+    --panel:#151d29;
+    --panel2:#1b2534;
+    --line:#26344a;
+    --txt:#e8eef7;
+    --muted:#8ea0b8;
+    --accent:#25d0ff;
+    --accent2:#7c5cff;
+    --ok:#26e07f;
+    --warn:#ffc14d;
+    --danger:#ff4d6d;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{height:100%;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1100px 600px at 50% -12%, #17263b 0%, transparent 60%),
+      radial-gradient(700px 500px at 100% 100%, #1a1533 0%, transparent 55%),
+      var(--bg);
+    color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,system-ui,sans-serif;
+    overscroll-behavior:none;
+    user-select:none;
+    -webkit-user-select:none;
+    touch-action:manipulation;
+  }
+  .wrap{max-width:520px;margin:0 auto;padding:calc(10px + env(safe-area-inset-top)) 14px calc(14px + env(safe-area-inset-bottom));}
+
+  /* ---------- header ---------- */
+  header{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.2px;font-size:17px;}
+  .logo{width:30px;height:30px;border-radius:9px;display:block;object-fit:cover;flex:none;}
+  .grow{flex:1;}
+  .pill{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+        padding:7px 11px;border-radius:999px;background:var(--panel);border:1px solid var(--line);color:var(--muted);}
+  .dot{width:8px;height:8px;border-radius:50%;background:#5a6a80;box-shadow:0 0 0 0 rgba(0,0,0,0);}
+  .dot.on{background:var(--ok);box-shadow:0 0 10px var(--ok);}
+  .dot.err{background:var(--danger);}
+  .btn{border:1px solid var(--line);background:var(--panel);color:var(--txt);
+       border-radius:12px;padding:9px 13px;font-size:13px;font-weight:700;cursor:pointer;}
+  .btn:active{transform:scale(.97);}
+  .btn.primary{background:linear-gradient(140deg,var(--accent),var(--accent2));color:#06131c;border:none;}
+  .btn.ghost{background:transparent;}
+
+  /* ---------- telemetry ---------- */
+  .telem{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
+  .card{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);
+        border-radius:14px;padding:9px 11px;}
+  .card .k{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700;}
+  .card .v{font-size:19px;font-weight:800;font-variant-numeric:tabular-nums;margin-top:2px;}
+  .card .v small{font-size:11px;color:var(--muted);font-weight:700;}
+  .dist-card{grid-column:span 3;display:flex;align-items:center;gap:12px;}
+  .dist-bar{flex:1;height:8px;border-radius:99px;background:#0e1521;border:1px solid var(--line);overflow:hidden;}
+  .dist-fill{height:100%;width:100%;background:linear-gradient(90deg,var(--danger),var(--warn),var(--ok));transition:width .15s linear;}
+
+  /* ---------- main pad ---------- */
+  .panel{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);
+         border-radius:var(--radius);padding:14px;margin-bottom:12px;}
+  .panel h3{margin:0 0 10px;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);}
+
+  .mode-switch{display:flex;gap:6px;background:#0e1521;border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:12px;}
+  .mode-switch button{flex:1;border:none;background:transparent;color:var(--muted);font-weight:700;font-size:13px;
+                      padding:8px;border-radius:9px;cursor:pointer;}
+  .mode-switch button.active{background:linear-gradient(140deg,var(--accent),var(--accent2));color:#06131c;}
+
+  .pad{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:9px;
+       max-width:320px;margin:0 auto;aspect-ratio:1/1;}
+  .pad button{border:1px solid var(--line);background:linear-gradient(180deg,#1d2839,#141c28);
+              color:var(--txt);border-radius:16px;font-size:24px;font-weight:800;cursor:pointer;
+              display:grid;place-items:center;transition:transform .06s,background .12s;}
+  .pad button .lbl{font-size:9px;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-top:-4px;}
+  .pad button:active,.pad button.held{background:linear-gradient(180deg,var(--accent),#0f9fca);color:#06131c;transform:scale(.96);}
+  .pad button.held .lbl{color:#06131c;}
+  .pad .stop{background:linear-gradient(180deg,#3a1622,#2a1018);border-color:#5c2436;color:#ff8aa2;}
+  .pad .stop:active{background:linear-gradient(180deg,var(--danger),#c22a49);color:#fff;}
+
+  /* ---------- joystick ---------- */
+  .joy-wrap{display:grid;place-items:center;padding:6px 0 2px;}
+  .joy{position:relative;width:min(74vw,300px);height:min(74vw,300px);border-radius:50%;
+       background:radial-gradient(circle at 50% 50%,#16202e,#0d1420);
+       border:1px solid var(--line);touch-action:none;}
+  .joy::before{content:"";position:absolute;inset:26%;border-radius:50%;border:1px dashed #2b3a52;}
+  .joy .knob{position:absolute;left:50%;top:50%;width:33%;height:33%;transform:translate(-50%,-50%);
+             border-radius:50%;background:linear-gradient(160deg,var(--accent),var(--accent2));
+             box-shadow:0 8px 24px rgba(37,208,255,.35);pointer-events:none;}
+  .joy .hint{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-size:11px;color:var(--muted);}
+
+  /* ---------- sliders ---------- */
+  .row{display:flex;align-items:center;gap:12px;margin:10px 0;}
+  .row .name{width:56px;font-size:12px;font-weight:700;color:var(--muted);}
+  .row .val{width:52px;text-align:right;font-size:14px;font-weight:800;font-variant-numeric:tabular-nums;}
+  input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:30px;background:transparent;touch-action:none;}
+  input[type=range]::-webkit-slider-runnable-track{height:10px;border-radius:99px;background:#0e1521;border:1px solid var(--line);}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-9px;border-radius:50%;
+      background:linear-gradient(160deg,var(--accent),var(--accent2));border:none;box-shadow:0 2px 8px rgba(0,0,0,.5);}
+  input[type=range]::-moz-range-track{height:10px;border-radius:99px;background:#0e1521;border:1px solid var(--line);}
+  input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:var(--accent);border:none;}
+
+  /* ---------- action grid ---------- */
+  .actions{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;}
+  .actions button{padding:14px 6px;border-radius:14px;border:1px solid var(--line);background:var(--panel);
+                  color:var(--txt);font-weight:800;font-size:12px;cursor:pointer;display:grid;gap:5px;place-items:center;}
+  .actions button .ico{font-size:19px;}
+  .actions button:active{transform:scale(.96);}
+  .actions button.on{background:linear-gradient(180deg,var(--ok),#12a35c);color:#04140c;border-color:transparent;}
+  .panel select{background:#0e1521;color:var(--txt);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px;font-weight:700;}
+
+  .estop{width:100%;margin-top:12px;padding:16px;border-radius:16px;border:1px solid #6b2337;
+         background:linear-gradient(180deg,#4a1220,#2b0b14);color:#ffb3c4;font-weight:900;font-size:16px;
+         letter-spacing:.06em;cursor:pointer;}
+  .estop:active{background:linear-gradient(180deg,var(--danger),#b81f3f);color:#fff;transform:scale(.98);}
+
+  /* ---------- speed gear buttons (1-4) ---------- */
+  .gear{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+  .gear button{padding:14px 0;border-radius:10px;border:1px solid var(--line);background:var(--panel);
+               color:var(--txt);font-size:17px;font-weight:800;cursor:pointer;line-height:1;
+               font-variant-numeric:tabular-nums;}
+  .gear button:active{transform:scale(.96);}
+  .gear button.active{background:linear-gradient(180deg,var(--accent),#12a0cc);color:#06131C;
+                      border-color:transparent;box-shadow:0 0 0 1px rgba(37,208,255,.5);}
+  .gear small{display:block;font-size:10px;font-weight:600;opacity:.6;margin-top:2px;}
+
+  /* ---------- hardware self-test ---------- */
+  .test-out{margin-top:8px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);
+            background:#0b111b;color:var(--muted);font-size:13px;font-weight:700;
+            font-variant-numeric:tabular-nums;min-height:20px;}
+  .test-out.ok{color:#7CFFB2;border-color:#1d5c39;}
+  .test-out.bad{color:#FF8AA2;border-color:#6b2337;}
+  .test-out.busy{color:#8FB7E0;}
+
+  /* ---------- settings ---------- */
+  details{border:1px solid var(--line);border-radius:14px;background:var(--bg2);margin-bottom:12px;overflow:hidden;}
+  summary{padding:13px 14px;font-weight:700;font-size:13px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;}
+  summary::-webkit-details-marker{display:none;}
+  summary::before{content:"⚙";}
+  .set{padding:0 14px 14px;}
+  .set label{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;padding:9px 0;border-top:1px solid var(--line);}
+  .set select,.set input[type=number],.set input[type=text]{background:#0e1521;color:var(--txt);border:1px solid var(--line);border-radius:9px;padding:7px 9px;font-size:13px;}
+  .hintline{font-size:11.5px;color:var(--muted);line-height:1.5;padding-top:8px;}
+  .sw{position:relative;width:46px;height:26px;border-radius:99px;background:#0e1521;border:1px solid var(--line);cursor:pointer;flex:none;}
+  .sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#5a6a80;transition:.16s;}
+  .sw.on{background:linear-gradient(140deg,var(--accent),var(--accent2));border-color:transparent;}
+  .sw.on::after{left:23px;background:#06131c;}
+
+  /* ---------- log ---------- */
+  .log{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--muted);
+       background:#080d14;border:1px solid var(--line);border-radius:12px;padding:10px;height:110px;overflow:auto;white-space:pre-wrap;}
+  .log b{color:var(--accent);font-weight:700;}
+
+  .warnbox{display:none;background:#2a1c0c;border:1px solid #6b4a15;color:#ffd79a;border-radius:12px;
+           padding:11px 13px;font-size:12.5px;line-height:1.5;margin-bottom:12px;}
+  .hide{display:none !important;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand"><img class="logo" src="data:image/png;base64,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" alt=""> RC Car</div>
+    <div class="grow"></div>
+    <span class="pill" id="statusPill"><span class="dot" id="statusDot"></span><span id="statusTxt">Disconnected</span></span>
+  </header>
+
+  <div class="warnbox" id="warnBox"></div>
+
+  <div style="display:flex;gap:8px;margin-bottom:8px;">
+    <button class="btn primary grow" id="connectBtn">Connect</button>
+    <button class="btn" id="fsBtn" title="Fullscreen">⛶</button>
+  </div>
+
+  <div class="mode-switch" id="transportSwitch" style="margin-bottom:8px;">
+    <button class="active" data-t="ble">Bluetooth LE</button>
+    <button data-t="serial">USB cable</button>
+  </div>
+
+  <div class="hintline" id="connectHint" style="margin:0 0 12px;">
+    Bluetooth LE finds <b>BLE modules only</b> (HM-10 / AT-09 / ESP32).
+    An <b>HC-05 will never appear</b> — it is Bluetooth Classic, which browsers cannot see.
+    If your Arduino is plugged into this computer, choose <b>USB cable</b> instead.
+  </div>
+
+  <!-- telemetry -->
+  <div class="telem">
+    <div class="card"><div class="k">Speed</div><div class="v" id="tSpeed">200</div></div>
+    <div class="card"><div class="k">Servo</div><div class="v" id="tServo">90<small>°</small></div></div>
+    <div class="card"><div class="k">Mode</div><div class="v" id="tMode" style="font-size:14px;padding-top:4px;">NORMAL</div></div>
+    <div class="card dist-card">
+      <div class="k" style="width:44px;">Dist</div>
+      <div class="v" id="tDist" style="width:78px;">--<small> cm</small></div>
+      <div class="dist-bar"><div class="dist-fill" id="distFill"></div></div>
+    </div>
+  </div>
+
+  <!-- drive -->
+  <div class="panel">
+    <h3>Drive</h3>
+    <div class="mode-switch" id="driveMode">
+      <button class="active" data-mode="pad">D-Pad</button>
+      <button data-mode="joy">Joystick</button>
+    </div>
+
+    <div id="padWrap">
+      <div class="pad">
+        <span></span>
+        <button data-cmd="F">▲<span class="lbl">FWD</span></button>
+        <span></span>
+        <button data-cmd="L">◀<span class="lbl">LEFT</span></button>
+        <button class="stop" data-cmd="S">■<span class="lbl">STOP</span></button>
+        <button data-cmd="R">▶<span class="lbl">RIGHT</span></button>
+        <span></span>
+        <button data-cmd="B">▼<span class="lbl">BACK</span></button>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="joyWrap" class="joy-wrap hide">
+      <div class="joy" id="joy"><div class="knob" id="knob"></div><div class="hint">drag to drive · distance = speed</div></div>
+    </div>
+  </div>
+
+  <!-- tuning -->
+  <div class="panel">
+    <h3>Speed &amp; Steering</h3>
+    <div class="row" style="margin-bottom:6px;">
+      <div class="name">Speed</div>
+      <div class="val"><span id="speedVal">2</span> <span id="speedPwm" style="opacity:.55;font-weight:600;">(200)</span></div>
+    </div>
+    <div class="gear" id="speedGears">
+      <button data-spd="1">1</button>
+      <button data-spd="2" class="active">2</button>
+      <button data-spd="3">3</button>
+      <button data-spd="4">4</button>
+    </div>
+    <div class="row" style="margin-top:14px;"><div class="name">Servo</div><input type="range" id="servo" min="0" max="180" value="90"><div class="val" id="servoVal">90°</div></div>
+    <div style="display:flex;gap:8px;margin-top:4px;">
+      <button class="btn grow" id="servoLeft">↰ 0°</button>
+      <button class="btn grow" id="servoCenter">⌃ 90°</button>
+      <button class="btn grow" id="servoRight">↱ 180°</button>
+    </div>
+  </div>
+
+  <!-- hardware self-test -->
+  <div class="panel">
+    <h3>Test</h3>
+    <div style="display:flex;gap:8px;">
+      <button class="btn grow" id="distTest">📏 Read distance</button>
+      <button class="btn grow" id="servoTest">🔄 Servo test</button>
+    </div>
+    <div id="testOut" class="test-out">Tap a button to test a sensor.</div>
+  </div>
+
+  <!-- actions -->
+  <div class="panel">
+    <h3>Functions</h3>
+    <div class="actions">
+      <button id="recBtn"><span class="ico">⏺</span>Record</button>
+      <button id="playBtn"><span class="ico">▶</span>Play</button>
+      <button id="obsBtn" class="on"><span class="ico">🛡</span>Avoid</button>
+      <button id="hornBtn"><span class="ico">📢</span>Horn</button>
+    </div>
+    <button class="estop" id="estop">EMERGENCY STOP</button>
+  </div>
+
+  <!-- advanced (extra firmware functions) -->
+  <div class="panel">
+    <h3>Advanced</h3>
+    <div class="row"><div class="name">Avoid</div><input type="range" id="obsCm" min="3" max="60" value="15"><div class="val" id="obsCmVal">15</div></div>
+    <div class="row" style="justify-content:space-between;">
+      <div class="name" style="width:auto;">Failsafe</div>
+      <select id="failsafeSel">
+        <option value="0">Off</option>
+        <option value="1000">1 s</option>
+        <option value="2000" selected>2 s</option>
+        <option value="3000">3 s</option>
+        <option value="5000">5 s</option>
+      </select>
+    </div>
+    <div class="mode-switch" id="turnMode" style="margin-top:10px;">
+      <button class="active" data-mode="0">Pivot turn</button>
+      <button data-mode="1">Gentle arc</button>
+    </div>
+    <div class="actions" style="grid-template-columns:repeat(2,1fr);margin-top:9px;">
+      <button id="liveBtn"><span class="ico">📡</span>Live dist</button>
+      <button id="clearBtn"><span class="ico">🗑</span>Clear path</button>
+    </div>
+  </div>
+
+  <!-- settings -->
+  <details>
+    <summary>Connection settings &amp; help</summary>
+    <div class="set">
+      <label>BLE service
+        <select id="bleMode">
+          <option value="ffeo">HM-10 / AT-09 (FFE0-FFE1)</option>
+          <option value="nus">Nordic UART (ESP32)</option>
+        </select>
+      </label>
+      <label>Device name filter
+        <input type="text" id="nameFilter" value="HC-05" placeholder="e.g. HMSoft, BT05" style="width:140px;">
+      </label>
+      <label>USB baud rate <input type="number" id="baud" value="9600" style="width:92px;"></label>
+      <div class="hintline">
+        <b>HC-05 is Bluetooth Classic — a web page cannot talk to it.</b><br>
+        • To use this page, swap the HC-05 for a BLE module (HM-10 / AT-09 / JDY-08) — the Arduino
+        firmware stays the same.<br>
+        • Android: open in <b>Chrome</b> and allow Bluetooth. iOS: use the <b>Bluefy</b> browser.<br>
+        • Or choose <b>USB cable</b> and plug the Arduino into the phone with an OTG adapter.<br>
+        • The baud box above is only used for the USB transport.
+      </div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>Log</summary>
+    <div class="set"><div class="log" id="log"></div></div>
+  </details>
+
+</div>
+
+<script>
+/* ============================================================================
+   RC CAR CONTROLLER  —  talks to the firmware over a text line protocol.
+   Two transports:
+     • Web Bluetooth  (BLE modules: HM-10 / AT-09 / ESP32)
+     • Web Serial     (USB cable via OTG)
+   Every command is sent with a trailing '\n'.
+   ==========================================================================*/
+const $ = id => document.getElementById(id);
+const enc = new TextEncoder();
+
+const BLE = {
+  ffeo: { service:'0000ffe0-0000-1000-8000-00805f9b34fb', char:'0000ffe1-0000-1000-8000-00805f9b34fb' },
+  nus : { service:'6e400001-b5a3-f393-e0a9-e50e24dcca9e', char:'6e400002-b5a3-f393-e0a9-e50e24dcca9e',
+          notify:'6e400003-b5a3-f393-e0a9-e50e24dcca9e' }
+};
+
+let device=null, gattServer=null, bleChar=null, bleNotify=null;
+let serialPort=null, serialWriter=null, serialReader=null;
+let connected=false, transport='ble';
+let rxBuffer='';
+let lastV=200;          // PWM of the current gear (2 -> 200)
+let gear=2;             // selected speed gear, 1-4; -1 when the joystick drives
+
+/* ---------------------------- logging ---------------------------- */
+function log(msg, cls){
+  const el=$('log');
+  const t=new Date().toLocaleTimeString([], {hour12:false});
+  el.innerHTML += `<b>${t}</b> ${msg}\n`;
+  el.scrollTop = el.scrollHeight;
+}
+function setStatus(state, text){
+  const dot=$('statusDot');
+  dot.className='dot'+(state==='on'?' on':state==='err'?' err':'');
+  $('statusTxt').textContent=text;
+}
+function buzz(ms=14){ try{ navigator.vibrate && navigator.vibrate(ms); }catch(e){} }
+
+/* ---------------------------- send ---------------------------- */
+async function send(str){
+  if(!connected){ return false; }
+  const data = enc.encode(str + '\n');
+  try{
+    if(transport==='ble' && bleChar){
+      // BLE writes are limited to ~20 bytes per packet -> chunk
+      for(let i=0;i<data.length;i+=20){
+        const slice=data.slice(i,i+20);
+        if(bleChar.properties.writeWithoutResponse) await bleChar.writeValueWithoutResponse(slice);
+        else await bleChar.writeValue(slice);
+      }
+    } else if(transport==='serial' && serialWriter){
+      await serialWriter.write(data);
+    }
+    return true;
+  }catch(e){
+    log('send failed: '+e.message);
+    return false;
+  }
+}
+function drive(cmd){ send(cmd); }
+
+/* ---------------------------- telemetry parsing ---------------------------- */
+function feed(text){
+  rxBuffer += text;
+  let idx;
+  while((idx = rxBuffer.indexOf('\n')) >= 0){
+    const line = rxBuffer.slice(0, idx).trim();
+    rxBuffer = rxBuffer.slice(idx+1);
+    if(line) handleLine(line);
+  }
+}
+function handleLine(line){
+  if(line.startsWith('DIST:')){
+    const cm = parseInt(line.slice(5),10);
+    updateDistance(cm);
+    if(testPending==='dist') showTestDistance(cm);
+  } else if(line.startsWith('STAT:')){
+    const p = line.slice(5).split(',');
+    const mode = ['NORMAL','RECORD','PLAY'][parseInt(p[0],10)] || '?';
+    $('tMode').textContent = mode;
+    if(p[1]!==undefined){ $('tSpeed').textContent = p[1]; }
+    if(p[2]!==undefined){ $('tServo').innerHTML = p[2]+'<small>°</small>'; }
+    if(p[3]!==undefined){ updateDistance(parseInt(p[3],10)); }
+  } else if(line.startsWith('EVT:')){
+    log('car → '+line.slice(4));
+    if(line.includes('OBSTACLE')) buzz(80);
+  } else if(line==='READY'){
+    log('car → READY');
+    if(testPending) testOut('Car says READY — test stopped.', '');
+  } else {
+    log('car → '+line);
+  }
+}
+function updateDistance(cm){
+  if(isNaN(cm)) return;
+  $('tDist').innerHTML = (cm>=999 ? '--' : cm)+'<small> cm</small>';
+  const pct = cm>=999 ? 100 : Math.max(4, Math.min(100, (cm/60)*100));
+  $('distFill').style.width = pct+'%';
+}
+
+/* ---------------------------- BLE ---------------------------- */
+async function connectBLE(){
+  if(!navigator.bluetooth){
+    throw new Error('Web Bluetooth not available in this browser.');
+  }
+  const mode = $('bleMode').value;
+  const optional = [BLE.ffeo.service, BLE.nus.service];
+
+  // Filtering by name keeps the list short and the scan quick. Leave the box
+  // empty to list every BLE device nearby instead.
+  const raw = ($('nameFilter').value || '').trim();
+  const prefixes = raw ? raw.split(',').map(s=>s.trim()).filter(Boolean) : [];
+
+  const opts = prefixes.length
+    ? { filters: prefixes.map(p => ({ namePrefix: p })), optionalServices: optional }
+    : { acceptAllDevices: true, optionalServices: optional };
+
+  log(prefixes.length ? ('filtering for: ' + prefixes.join(', ')) : 'showing all BLE devices');
+
+  log('requesting Bluetooth device…');
+  device = await navigator.bluetooth.requestDevice(opts);
+  device.addEventListener('gattserverdisconnected', onDisconnect);
+
+  log('selected: ' + (device.name || '(no name)') + '  [' + device.id + ']');
+  gattServer = await connectWithRetry(device);
+
+  // try the selected service first, then the other
+  const order = mode==='nus' ? ['nus','ffeo'] : ['ffeo','nus'];
+  let svc=null, chr=null, notify=null;
+  for(const key of order){
+    try{
+      const s = await gattServer.getPrimaryService(BLE[key].service);
+      chr = await s.getCharacteristic(BLE[key].char);
+      notify = BLE[key].notify ? await s.getCharacteristic(BLE[key].notify).catch(()=>null) : chr;
+      svc = key;
+      break;
+    }catch(e){ /* try next */ }
+  }
+  if(!chr) throw new Error('No serial characteristic found (tried FFE0 & NUS).');
+
+  bleChar = chr;
+  log('using service: '+svc.toUpperCase());
+
+  if(notify){
+    try{
+      bleNotify = notify;
+      await bleNotify.startNotifications();
+      bleNotify.addEventListener('characteristicvaluechanged', ev=>{
+        feed(new TextDecoder().decode(ev.target.value));
+      });
+      log('notifications on');
+    }catch(e){ log('notify unavailable: '+e.message); }
+  }
+  connected = true;
+}
+
+/* BLE connections are flaky — a single failed attempt means very little.
+   Retry a few times before giving up. */
+async function connectWithRetry(device, tries){
+  tries = tries || 3;
+  let lastErr = null;
+  for(let i=1;i<=tries;i++){
+    try{
+      log('connecting… attempt '+i+'/'+tries);
+      return await device.gatt.connect();
+    }catch(e){
+      lastErr = e;
+      log('attempt '+i+' failed: '+e.message);
+      if(i < tries) await new Promise(r=>setTimeout(r, 700));
+    }
+  }
+  throw lastErr;
+}
+
+/* ---------------------------- Serial ---------------------------- */
+async function connectSerial(){
+  if(!navigator.serial) throw new Error('Web Serial not available (use Chrome on Android/desktop).');
+  const baud = parseInt($('baud').value,10) || 9600;
+  log('requesting serial port…');
+  serialPort = await navigator.serial.requestPort();
+  await serialPort.open({ baudRate: baud });
+  serialWriter = serialPort.writable.getWriter();
+  connected = true;
+  readSerialLoop();
+  log('serial open @ '+baud);
+}
+async function readSerialLoop(){
+  try{
+    serialReader = serialPort.readable.getReader();
+    const dec = new TextDecoder();
+    while(true){
+      const {value, done} = await serialReader.read();
+      if(done) break;
+      if(value) feed(dec.decode(value));
+    }
+  }catch(e){ log('serial read stopped: '+e.message); }
+}
+
+/* ---------------------------- connect / disconnect ---------------------------- */
+async function connect(){
+  transport = document.querySelector('#transportSwitch button.active').dataset.t;
+  setStatus('', 'Connecting…');
+  try{
+    if(transport==='ble') await connectBLE(); else await connectSerial();
+    setStatus('on', transport==='ble' ? (device.name||'Connected') : 'USB');
+    $('connectBtn').textContent='Disconnect';
+    $('warnBox').style.display='none';
+    log('connected ✔');
+    buzz(30);
+    startPolling();
+    pushSettings();
+  }catch(e){
+    log('connect error: '+e.message);
+    setStatus('err','Failed');
+    $('connectBtn').textContent='Connect';
+    showConnectHelp(e);
+  }
+}
+
+/* Turn a failed connection into something the user can actually act on. */
+function showConnectHelp(e){
+  const w=$('warnBox');
+  const name=(e && e.name)||'';
+  const text=(e && e.message)||'';
+  let msg;
+
+  if(transport==='ble' && (name==='NotFoundError' || /cancel|chooser|no device/i.test(text))){
+    msg='<b>No Bluetooth devices found.</b><br>'+
+        '1. <b>Is your module an HC-05?</b> It is Bluetooth <i>Classic</i> — a browser can never see it. '+
+        'Use the Android app, or swap it for a BLE module (HM-10 / AT-09 / ESP32).<br>'+
+        '2. Is Bluetooth switched <b>on</b> on this computer, and does it have an adapter?<br>'+
+        '3. Is the module already connected to something else (another phone/app)? Disconnect it first.<br>'+
+        '4. Clear the <b>Device name filter</b> in Connection settings to list every BLE device.<br>'+
+        '5. Arduino plugged in by USB? Pick <b>USB cable</b> as the transport — that works with any module.';
+  } else if(transport==='ble' && (name==='NetworkError' || /connection attempt failed|gatt|not connected/i.test(text))){
+    msg='<b>The device was found, but it refused the connection.</b><br>'+
+        'That means the entry you picked is not a connectable BLE serial module. In order of likelihood:<br>'+
+        '1. <b>It is not your module at all.</b> Test: unplug the power from your Bluetooth module and scan again — '+
+        'if the entry disappears it is yours, if it stays it belongs to a neighbour (TV, watch, beacon).<br>'+
+        '2. <b>It is an HC-05 / Bluetooth Classic device.</b> Classic cannot be driven from a browser. '+
+        'Use the Android app, or swap to a BLE module (HM-10 / AT-09).<br>'+
+        '3. <b>Something else already holds it</b> — a phone app, or a Windows Bluetooth COM port. '+
+        'Remove/forget the device in Windows Bluetooth settings, then rescan.';
+  } else if(transport==='ble' && name==='SecurityError'){
+    msg='Bluetooth was blocked. Allow the Bluetooth permission for this page, then try again.';
+  } else if(transport==='serial'){
+    msg='<b>Could not open the USB serial port.</b><br>'+
+        'Close the Arduino IDE Serial Monitor — it locks the port — then try again. '+
+        'Also make sure the USB cable is a data cable, not a charge-only one.';
+  } else {
+    msg='Connect failed: '+text;
+  }
+  w.style.display='block';
+  w.innerHTML=msg;
+}
+function onDisconnect(){
+  connected=false;
+  setStatus('','Disconnected');
+  $('connectBtn').textContent='Connect';
+  stopPolling();
+  // Drop any in-flight test so its timeout cannot fire against a dead link
+  // and cannot restart the poll (testEnd() would call startPolling()).
+  clearTimeout(testTimer); testTimer=null; testPending=null;
+  $('distTest').disabled = false; $('servoTest').disabled = false;
+  log('disconnected');
+}
+async function disconnect(){
+  stopPolling();
+  try{ if(bleNotify) await bleNotify.stopNotifications(); }catch(e){}
+  try{ if(gattServer && gattServer.connected) gattServer.disconnect(); }catch(e){}
+  try{ if(serialReader) await serialReader.cancel(); }catch(e){}
+  try{ if(serialWriter) serialWriter.releaseLock(); }catch(e){}
+  try{ if(serialPort) await serialPort.close(); }catch(e){}
+  bleChar=null; gattServer=null; serialWriter=null; serialReader=null; serialPort=null;
+  onDisconnect();
+}
+$('connectBtn').onclick = ()=> connected ? disconnect() : connect();
+
+/* ---------------------------- polling telemetry ---------------------------- */
+let pollTimer=null;
+function startPolling(){
+  stopPolling();
+  pollTimer=setInterval(()=>{ if(connected) send('?D'); }, 300);
+}
+function stopPolling(){ if(pollTimer){ clearInterval(pollTimer); pollTimer=null; } }
+
+/* ---------------------------- D-Pad (press & hold) ---------------------------- */
+document.querySelectorAll('.pad button').forEach(btn=>{
+  const cmd = btn.dataset.cmd;
+  const press = e=>{ e.preventDefault(); btn.classList.add('held'); buzz(12); drive(cmd); };
+  const release = e=>{ if(!btn.classList.contains('held')) return; btn.classList.remove('held');
+                       if(cmd!=='S') drive('S'); };
+  btn.addEventListener('pointerdown', press);
+  btn.addEventListener('pointerup', release);
+  btn.addEventListener('pointercancel', release);
+  btn.addEventListener('pointerleave', release);
+  btn.addEventListener('contextmenu', e=>e.preventDefault());
+});
+
+/* ---------------------------- Joystick ---------------------------- */
+(function(){
+  const joy=$('joy'), knob=$('knob');
+  let active=false, id=null;
+  let curDir='S', curSpeed=0;
+  function setKnob(dx,dy){ knob.style.transform=`translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px))`; }
+  function reset(){ setKnob(0,0); if(curDir!=='S'){ drive('S'); curDir='S'; } }
+  function onMove(e){
+    const r=joy.getBoundingClientRect();
+    const cx=r.left+r.width/2, cy=r.top+r.height/2;
+    let dx=e.clientX-cx, dy=e.clientY-cy;
+    const max=r.width/2 - r.width*0.16;
+    const mag=Math.min(1, Math.hypot(dx,dy)/max);
+    if(mag>0){ const a=Math.atan2(dy,dx); dx=Math.cos(a)*mag*max; dy=Math.sin(a)*mag*max; }
+    setKnob(dx,dy);
+
+    if(mag < 0.22){ if(curDir!=='S'){ drive('S'); curDir='S'; } return; }
+
+    // choose nearest cardinal direction
+    let dir;
+    if(Math.abs(dx) > Math.abs(dy)) dir = dx>0 ? 'R' : 'L';
+    else                            dir = dy>0 ? 'B' : 'F';
+
+    if(dir!==curDir){ drive(dir); curDir=dir; }
+
+    const spd = Math.round(60 + mag*195);           // 60..255
+    // The joystick is analog, so it sends V: directly rather than a gear 1-9.
+    // Clear the gear highlight so the display does not claim a gear that is no
+    // longer what the car is running.
+    if(Math.abs(spd-lastV) >= 6){
+      lastV=spd; gear=-1; setSpeedButtons(-1);
+      $('speedVal').textContent='~'; $('speedPwm').textContent='('+spd+')';
+      $('tSpeed').textContent=spd; send('V:'+spd);
+    }
+  }
+  joy.addEventListener('pointerdown', e=>{ active=true; id=e.pointerId; joy.setPointerCapture(id); buzz(12); onMove(e); });
+  joy.addEventListener('pointermove', e=>{ if(active && e.pointerId===id) onMove(e); });
+  const end=e=>{ if(!active) return; active=false; reset(); };
+  joy.addEventListener('pointerup', end);
+  joy.addEventListener('pointercancel', end);
+})();
+
+/* ---------------------------- transport switch ---------------------------- */
+$('transportSwitch').addEventListener('click', e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#transportSwitch button').forEach(x=>x.classList.toggle('active', x===b));
+  $('warnBox').style.display='none';
+});
+
+/* ---------------------------- drive mode switch ---------------------------- */
+$('driveMode').addEventListener('click', e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#driveMode button').forEach(x=>x.classList.toggle('active', x===b));
+  const joy = b.dataset.mode==='joy';
+  $('padWrap').classList.toggle('hide', joy);
+  $('joyWrap').classList.toggle('hide', !joy);
+  if(joy) drive('S');
+});
+
+/* ------------------- speed gears (1-4, replaces slider) ------------------- */
+/* Gear -> PWM. Range is 170..255 so even gear 1 moves the car under load.
+   NOTE: these are sent as explicit V:<pwm> commands, NOT as bare digits. The
+   firmware's bare-digit path maps n*28, which would make gear 4 only 112 --
+   nowhere near the 255 we want. V: is exact.                                  */
+const GEAR_PWM = { 1: 170, 2: 200, 3: 225, 4: 255 };
+const GEAR_MAX = 4;
+
+function setSpeedButtons(g){
+  document.querySelectorAll('#speedGears button').forEach(b=>{
+    b.classList.toggle('active', +b.dataset.spd === g);
+  });
+}
+function setGear(g){
+  g = Math.max(1, Math.min(GEAR_MAX, g));
+  gear = g;
+  const pwm = GEAR_PWM[g];
+  setSpeedButtons(g);
+  $('speedVal').textContent = g;
+  $('speedPwm').textContent = '('+pwm+')';
+  $('tSpeed').textContent = pwm;
+  lastV = pwm;
+  send('V:'+pwm);           // explicit PWM, not a bare digit
+  buzz(15);
+}
+$('speedGears').addEventListener('click', e=>{
+  const b = e.target.closest('button[data-spd]');
+  if(!b) return;
+  setGear(+b.dataset.spd);
+});
+
+/* ---------------------------- servo slider ---------------------------- */
+$('servo').addEventListener('input', e=>{
+  const v=e.target.value; $('servoVal').textContent=v+'°'; $('tServo').innerHTML=v+'<small>°</small>';
+  send('G:'+v);
+});
+$('servoLeft').onclick  = ()=>{ setServo(0); };
+$('servoCenter').onclick= ()=>{ setServo(90); };
+$('servoRight').onclick = ()=>{ setServo(180); };
+function setServo(v){ $('servo').value=v; $('servoVal').textContent=v+'°'; $('tServo').innerHTML=v+'<small>°</small>'; send('G:'+v); }
+
+/* ---------------------------- hardware self-test ---------------------------- */
+/* BUG this guards against: the app polls '?D' every 300 ms and the distance
+   test sends the SAME '?D'. Without pausing the poll, the next poll reply
+   (<=300 ms later) would be consumed as the test's answer -- and would show a
+   stale reading even if the sensor were dead. So: stop the poll for the
+   duration of a test, then restart it.                                        */
+let testPending = null;
+let testTimer   = null;
+
+function testOut(msg, cls){
+  const el = $('testOut');
+  el.textContent = msg;
+  el.className = 'test-out' + (cls ? ' ' + cls : '');
+}
+/** Stop polling while a manual test owns the '?D' reply. */
+function testBegin(){
+  clearTimeout(testTimer);
+  stopPolling();
+}
+/** Hand the line back to the poll once the test is finished. */
+function testEnd(){
+  clearTimeout(testTimer);
+  testTimer = null;
+  testPending = null;
+  if(connected) startPolling();
+}
+function showTestDistance(cm){
+  testEnd();
+  if(isNaN(cm) || cm >= 999){
+    testOut('No echo detected. Check the HC-SR04 wiring on TRIG 11 / ECHO 12.', 'bad');
+  } else {
+    testOut('Ultrasonic OK — obstacle is ' + cm + ' cm away.', 'ok');
+  }
+}
+function showTestLoss(){
+  testEnd();
+  testOut('No reply from the car. Is it connected and powered?', 'bad');
+}
+
+$('distTest').onclick = ()=>{
+  if(!connected){ testOut('Connect to the car first.', 'bad'); return; }
+  testPending = 'dist';
+  testBegin();                       // <- poll paused, so the reply is ours
+  testOut('Reading...', 'busy');
+  $('distTest').disabled = true;
+  send('?D');                        // one-shot distance reading
+  buzz(20);
+  testTimer = setTimeout(showTestLoss, 2500);
+  setTimeout(()=>{ $('distTest').disabled = false; }, 2600);
+};
+
+$('servoTest').onclick = ()=>{
+  if(!connected){ testOut('Connect to the car first.', 'bad'); return; }
+  testBegin();
+  testOut('Sweeping 0° → 90° → 180° → 90°... watch the servo.', 'busy');
+  $('servoTest').disabled = true;
+  send('!T');                        // firmware sweep self-test
+  buzz(20);
+  // The firmware sweep is blocking: 400+400+400+200 ms. It reports back with
+  // STAT: when it finishes, so we wait a little past that and then say what
+  // to check if nothing moved.
+  testTimer = setTimeout(()=>{
+    testEnd();
+    testOut('Servo sweep finished. If it did not move, check the signal wire on pin 3.', 'ok');
+    $('servoTest').disabled = false;
+  }, 1800);
+};
+
+/* ---------------------------- action buttons ---------------------------- */
+let recording=false, playing=false, obstacle=true;
+$('recBtn').onclick = ()=>{ recording=!recording; if(recording) playing=false; send('!R:'+(recording?1:0));
+  $('recBtn').classList.toggle('on',recording); $('playBtn').classList.remove('on'); $('tMode').textContent=recording?'RECORD':'NORMAL'; buzz(20); };
+$('playBtn').onclick = ()=>{ playing=!playing; if(playing) recording=false; send('!P:'+(playing?1:0));
+  $('playBtn').classList.toggle('on',playing); $('recBtn').classList.remove('on'); $('tMode').textContent=playing?'PLAY':'NORMAL'; buzz(20); };
+$('obsBtn').onclick = ()=>{ obstacle=!obstacle; send('!O:'+(obstacle?1:0)); $('obsBtn').classList.toggle('on',obstacle); buzz(15); };
+$('hornBtn').onclick = ()=>{ send('!H:1'); buzz(120); setTimeout(()=>send('!H:0'), 400); };
+$('estop').onclick = ()=>{ recording=false; playing=false;
+  $('recBtn').classList.remove('on'); $('playBtn').classList.remove('on');
+  send('S'); send('!R:0'); send('!P:0'); $('tMode').textContent='NORMAL'; buzz([40,40,40]); };
+
+/* ---------------------------- advanced controls ---------------------------- */
+$('obsCm').addEventListener('input', e=>{ const v=e.target.value; $('obsCmVal').textContent=v; send('!A:'+v); });
+$('failsafeSel').addEventListener('change', e=>{ send('!F:'+e.target.value); buzz(15); });
+$('turnMode').addEventListener('click', e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#turnMode button').forEach(x=>x.classList.toggle('active', x===b));
+  send('!M:'+b.dataset.mode); buzz(15);
+});
+let live=false;
+$('liveBtn').onclick = ()=>{ live=!live; send('!L:'+(live?1:0)); $('liveBtn').classList.toggle('on',live); buzz(15); };
+$('clearBtn').onclick = ()=>{ send('!K'); buzz(20); };
+
+/* push the app's current settings to the car right after connecting */
+function pushSettings(){
+  send('!A:'+$('obsCm').value);
+  send('!F:'+$('failsafeSel').value);
+  send('!M:'+document.querySelector('#turnMode button.active').dataset.mode);
+  send('!O:'+(obstacle?1:0));
+  // Sync the selected gear so the car's speed matches what the UI shows.
+  if(gear > 0) send('V:'+GEAR_PWM[gear]);
+}
+
+/* ---------------------------- settings widgets ---------------------------- */
+
+/* ---------------------------- keyboard (desktop testing) ---------------------------- */
+const keymap={ ArrowUp:'F', ArrowDown:'B', ArrowLeft:'L', ArrowRight:'R', ' ':'S' };
+document.addEventListener('keydown', e=>{
+  if(keymap[e.key]){ e.preventDefault(); drive(keymap[e.key]); }
+});
+document.addEventListener('keyup', e=>{
+  if(keymap[e.key] && keymap[e.key]!=='S'){ e.preventDefault(); drive('S'); }
+});
+
+/* ---------------------------- fullscreen + wake lock ---------------------------- */
+$('fsBtn').onclick = ()=>{ if(!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+                           else document.exitFullscreen?.(); };
+let wakeLock=null;
+document.addEventListener('visibilitychange', async ()=>{
+  if(document.visibilityState==='visible' && connected && !wakeLock){
+    try{ wakeLock = await navigator.wakeLock.request('screen'); }catch(e){}
+  }
+});
+
+/* ---------------------------- capability warnings ---------------------------- */
+(function(){
+  const w=$('warnBox'); const msgs=[];
+  if(!navigator.bluetooth) msgs.push('This browser has no Web Bluetooth. On iOS use the <b>Bluefy</b> browser; on Android use <b>Chrome</b>.');
+  if(location.protocol==='file:') msgs.push('Tip: serve this file over <b>https</b> (or localhost) — Web Bluetooth / Web Serial require a secure context. Opening it from a file:// path may block the connection.');
+  if(msgs.length){ w.style.display='block'; w.innerHTML=msgs.join('<br>'); }
+})();
+
+log('ready — pick a transport and press Connect');
+</script>
+</body>
+</html>

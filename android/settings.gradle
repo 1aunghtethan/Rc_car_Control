@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        // Local mirror holding three transitive jars that dl.google.com would
+        // not serve to the Gradle JVM on this machine (the raw URLs resolve
+        // fine via curl, but Gradle's fetch failed). Listing it first means
+        // the build no longer depends on reaching Google's maven for them.
+        // Populated from the Gradle module cache; see local-maven/.
+        maven { url = uri("${rootDir}/local-maven") }
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "RCCarController"
+include ':app'

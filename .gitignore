@@ -1,0 +1,60 @@
+# ============================================================================
+#  Git ignores for the RC car project.
+#  Goal: the repo holds SOURCE ONLY. Nothing generated, nothing huge.
+# ============================================================================
+
+# ---- Huge / irrelevant downloads ----
+# The Android Studio installer is ~1.5 GB. GitHub rejects files over 100 MB.
+android-studio-rabbit1-windows.exe
+*.exe
+
+# ---- Coursework / reports (not source) ----
+To_reference/
+
+# ---- Upload packages and backups built by tooling ----
+Rc_car_Control.zip
+*.zip
+README_root_backup.md
+
+# ---- Android / Gradle build output ----
+# NOTE: local-maven/ legitimately contains a path segment named "build"
+# (com/android/tools/build/aapt2/...). The patterns below are anchored to the
+# project root and to */build/ so that mirror directory is NOT excluded.
+/build/
+/android/build/
+/android/app/build/
+/android/.gradle/
+/android/.kotlin/
+/android/.idea/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# ---- Local machine config ----
+# Contains an absolute SDK path; every machine has its own.
+local.properties
+
+# ---- WorkBuddy / IDE tooling ----
+# .workbuddy-ai/ holds the assistant's private working notes (hardware notes,
+# session logs, decisions). Not project source — keep it out of a public repo.
+.workbuddy/
+.workbuddy-ai/
+.wbapp_*.genie
+.idea/
+*.iml
+captures/
+
+# ---- OS noise ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Editor backups ----
+*.swp
+*~
+*.bak
+
+# ---- Private scratch sketches (Myanmar filenames, superseded) ----
+# Comment the next line out if you deliberately want these on GitHub.
+forCode/*.txt
